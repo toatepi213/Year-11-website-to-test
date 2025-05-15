@@ -1,0 +1,275 @@
+body {
+    background-color: #e7e7e7;
+    margin: 2%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "navigationbar navigationbar navigationbar navigationbar"
+        "heading1 heading1 heading1 heading1"
+        "text1 text1 text1 text1"
+        "pic1 pic2 pic3 pic4"
+        "pic5 pic6 pic7 pic8"
+        "carousel-container carousel-container carousel-container carousel-container"
+        "text2 text2 text2 text2"
+        "footer footer footer footer";
+    grid-gap: 0.5rem;
+    max-width: 1450px;
+    margin: auto;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "navigationbar navigationbar"
+            "heading1 heading1"
+            "text1 text1"
+            "pic1 pic2"
+            "pic3 pic4"
+            "pic5 pic6"
+            "pic7 pic8"
+            "carousel-container carousel-container"
+            "text2 text2"
+            "footer footer";
+    }
+}
+
+/* Media Query for Mobile Phones */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "navigationbar"
+            "heading1"
+            "text1"
+            "pic1"
+            "pic2"
+            "pic3"
+            "pic4"
+            "pic5"
+            "pic6"
+            "pic7"
+            "pic8"
+            "carousel-container"
+            "text2"
+            "footer";
+    }
+
+.navigationbar ul {
+        padding: 0;
+    }
+
+.navigationbar li {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+.picturename .btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+   }
+
+.hello {
+    position: absolute;
+    width: 6%;
+    height: auto;
+    left: 0px;
+    padding-left: 15%;
+}
+.navigationbar {
+    grid-area: navigationbar;
+    background-color: #6D8764;
+    color: #e7e7e7;
+    padding: 6%;
+    height: 3%;
+}
+
+.navigationbar ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 8px;
+}
+
+.navigationbar li {
+    display: inline-block;
+    border: 2px solid #e7e7e7;
+    padding: 1% 2%;
+    color: #e7e7e7;
+    text-align: center;
+    font-size: 18px;
+}
+
+.heading1 {
+    grid-area: heading1;
+    background-image: url(images/kakatisi.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #e7e7e7;
+    height: 300px; /* ← increase as needed */
+    display: flex;
+    font-size: 60px;
+    align-items: center;
+    text-align: left;
+    font-family: 'Great Vibes', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+heading1 h1 {
+    font-size: 3rem; /* adjust as needed */
+    color: white; /* optional for contrast */
+    text-shadow: 2px 2px 4px #000; /* optional, for fairytale glow effect */
+    margin: 0;
+}
+
+.text1 {
+    grid-area: text1;
+    background-color: #6D8764;
+    font-size: 100%;
+    text-align: justify;
+    padding: 15px;
+}
+
+H2 {
+    text-align: center;
+}
+.image-resize {
+    width: 95%;
+    height: auto;
+    object-position: center center;
+}
+
+.pic1, .pic2, .pic3, .pic4, .pic5, .pic6, .pic7, .pic8 {
+    background-color: #6D8764;
+    border: 2px solid #050000;
+    text-align: center;
+    border-radius: 5%;
+    padding-top: 10%;
+}
+
+.picturename {
+    margin-top: auto; 
+    padding: 10%;
+    background-color: #6D8764;
+    text-align: justify;
+    font-size: 90%;
+    border-radius: 15%;
+}
+
+.picturename .btn {
+    display: inline-block;
+    padding: 2% 3%;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.carousel-container{
+    grid-area: carousel-container;
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 2px; /* Optional: Add some rounding to the images */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.text2 {
+    grid-area: text2;
+    background-color: #6d8764;
+    padding: 8%;
+    text-align: center;
+}
+
+.expandable .more-text {
+    display: none; /* Hide the additional content initially */
+    cursor: pointer;
+}
+
+.expandable.expanded .more-text {
+    display: inline; /* Show the additional content when expanded */
+    cursor: pointer;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #a2a2a2;
+    text-align: center;
+    padding: 10px;
+}
